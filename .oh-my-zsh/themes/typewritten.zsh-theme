@@ -1,0 +1,1 @@
+/home/mark/.oh-my-zsh/custom/themes/typewritten/typewritten.zsh-theme
