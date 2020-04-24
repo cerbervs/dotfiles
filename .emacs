@@ -19,7 +19,7 @@
     ("#8f4e8b" "#8f684e" "#c3a043" "#397460" "#54ab8e" "#20a6ab" "#3573b1" "#DC8CC3")))
  '(package-selected-packages
    (quote
-    (rotate ace-window ace-mc ace-jump-mode xclip powerline helm-clojuredocs helm-cider helm moe-theme zenburn-theme neotree doneburn-theme rainbow-delimiters company cider)))
+    (general key-chord org-evil evil rotate ace-window ace-mc ace-jump-mode xclip powerline helm-clojuredocs helm-cider helm moe-theme zenburn-theme neotree doneburn-theme rainbow-delimiters company cider)))
  '(pdf-view-midnight-colors (quote ("#444444" . "#eeeeee")))
  '(safe-local-variable-values
    (quote
@@ -125,5 +125,33 @@
 (global-set-key (kbd "C-c )") 'ace-mc-add-multiple-cursors)
 (global-set-key (kbd "C-c C-c )") 'ace-mc-add-single-cursor)
 
-;; ace-windows
-(global-set-key (kbd "M-o") 'ace-window)
+;; evil
+(require 'evil)
+(evil-mode 1)
+
+;; remap ,, to <esc>
+(require 'key-chord)
+(key-chord-mode 1)
+(key-chord-define evil-normal-state-map ",," 'evil-force-normal-state)
+(key-chord-define evil-visual-state-map ",," 'evil-change-to-previous-state)
+(key-chord-define evil-insert-state-map ",," 'evil-normal-state)
+(key-chord-define evil-replace-state-map ",," 'evil-normal-state)
+
+(require 'general)
+
+(general-evil-setup)
+
+(general-nmap "SPC" (general-key-dispatch nil
+		      "mx" 'helm-M-x
+		      "w" 'ace-window
+		      "j" 'ace-jump-mode
+		      "xx" 'delete-window
+		      "ff" 'helm-find-files))
+
+(general-swap-key nil 'motion
+  ";" ":")
+
+(general-imap "j"
+  (general-key-dispatch 'self-insert-command
+    :timeout 0.25
+    "k" 'evil-normal-state))
