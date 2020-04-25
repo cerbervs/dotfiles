@@ -105,7 +105,6 @@ alias emacs="emacs -nw $1"
 
 # typewritten theme settings
 export TYPEWRITTEN_CURSOR="block"
-TYPEWRITTEN_PROMPT_LAYOUT="multiline"
-export TYPEWRITTEN_PROMPT_LAYOUT
+export TYPEWRITTEN_PROMPT_LAYOUT="multiline"
 
 export DISPLAY=:0
