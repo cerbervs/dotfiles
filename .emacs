@@ -94,14 +94,6 @@
 ;; custom load path
 (add-to-list 'load-path "~/.emacs.d/elpa")
 
-;; xclip shit
-(xclip-mode +1)
-(setq
- x-select-enable-clipboard t
- x-select-enable-primary t
- x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING)
-   x-stretch-cursor t)
-
 ;; windows resize
 (global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
 (global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
@@ -145,8 +137,12 @@
 		      "mx" 'helm-M-x
 		      "w" 'ace-window
 		      "j" 'ace-jump-mode
-		      "xx" 'delete-window
-		      "ff" 'helm-find-files))
+		      "xw" 'delete-window
+		      "xb" 'kill-buffer
+		      "ff" 'helm-find-files
+		      "b" 'helm-buffers-list
+		      "sv" 'split-window-horizontally
+		      "sh" 'split-window-vertically))
 
 (general-swap-key nil 'motion
   ";" ":")

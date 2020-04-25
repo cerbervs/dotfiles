@@ -3,6 +3,9 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+	evil-backward-char
+	evil-forward-char
+	evil-visual-char
 	))
 
 (setq mc/cmds-to-run-once
@@ -14,5 +17,6 @@
 	ace-mc-add-single-cursor
 	ace-mc-do-keyboard-reset
 	ace-mc-quick-exchange
+	evil-find-char
 	indent-for-tab-command
 	))

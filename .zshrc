@@ -100,7 +100,12 @@ source $ZSH/oh-my-zsh.sh
 alias so="source ~/.zshrc"
 alias t="tree -p $1 | less"
 alias ls="ls -al"
+alias ureload="xrdb -merge ~/.XResources"
+alias emacs="emacs -nw $1"
 
 # typewritten theme settings
 export TYPEWRITTEN_CURSOR="block"
 TYPEWRITTEN_PROMPT_LAYOUT="multiline"
+export TYPEWRITTEN_PROMPT_LAYOUT
+
+export DISPLAY=:0
