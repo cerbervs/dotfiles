@@ -75,11 +75,11 @@
 
 ;; powerline
 (require 'powerline)
-(powerline-center-theme)
 
 ;; moe theme
 (require 'moe-theme)
-(moe-theme-set-color 'blue)
+(powerline-moe-theme)
+(moe-theme-set-color 'cyan)
 (moe-dark)
 
 ;; helm 
@@ -141,11 +141,14 @@
 		      "xb" 'kill-buffer
 		      "ff" 'helm-find-files
 		      "b" 'helm-buffers-list
-		      "sv" 'split-window-horizontally
-		      "sh" 'split-window-vertically))
+		      "s|" 'split-window-horizontally
+		      "s-" 'split-window-vertically
+		      "zz" 'suspend-emacs))
 
 (general-swap-key nil 'motion
-  ";" ":")
+  ";" ":"
+  "j" "gj"
+  "k" "gk")
 
 (general-imap "j"
   (general-key-dispatch 'self-insert-command
